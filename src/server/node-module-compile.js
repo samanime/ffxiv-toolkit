@@ -1,14 +1,7 @@
 import { existsSync } from 'fs';
 import { join } from 'path';
 import { transformFileSync } from '@babel/core';
-import resolvePath from './babel-resolve-path';
 
-// const transformOptions = {
-//   plugins: [['babel-plugin-module-resolver', {
-//     root: ['./src'],
-//     resolvePath
-//   }]]
-// };
 const transformOptions = require('../client/.babelrc.js');
 
 export default (nodeModulesDir, pathRoot) => (req, res) => {
