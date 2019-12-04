@@ -2,7 +2,7 @@ import { existsSync } from 'fs';
 import { join } from 'path';
 import { transformFileSync } from '@babel/core';
 
-const transformOptions = require('../client/.babelrc.js');
+const transformOptions = require('./client-babel-config');
 
 export default (nodeModulesDir, pathRoot) => (req, res) => {
   const filePath = join(nodeModulesDir, req.path.replace(pathRoot, ''));
