@@ -13,7 +13,10 @@ export const navigate = path => dispatch => {
 const loadPage = page => async dispatch => {
   const route = routes[page];
 
+  const url = page === defaultRoute ? '/' : page;
   history.pushState('', route.title, page === defaultRoute ? '/' : page);
+  /* global ga */
+  ga && ga('set', 'page', url); // google analytics
 
   import(`.${route.source}`).then(route.then || (() => {}));
 
