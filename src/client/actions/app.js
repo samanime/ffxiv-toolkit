@@ -13,7 +13,7 @@ export const navigate = path => dispatch => {
 const loadPage = page => async dispatch => {
   const route = routes[page];
 
-  history.pushState('', route.title, '/' + (page === defaultRoute ? '' : page);
+  history.pushState('', route.title, '/' + (page === defaultRoute ? '' : page));
 
   import(`.${route.source}`).then(route.then || (() => {}));
 
