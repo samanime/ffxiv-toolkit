@@ -17,6 +17,7 @@ const loadPage = page => async dispatch => {
   history.pushState('', route.title, page === defaultRoute ? '/' : page);
   /* global ga */
   ga && ga('set', 'page', url); // google analytics
+  ga && ga('send', 'pageview');
 
   import(`.${route.source}`).then(route.then || (() => {}));
 
