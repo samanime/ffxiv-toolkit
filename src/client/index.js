@@ -1,9 +1,12 @@
-import { html, LitElement } from 'lit-element';
+import './components/app';
+import store from './store';
+import { navigate } from './actions/app';
 
-class App extends LitElement {
-  render() {
-    return html`<div>Woot woot</div>`;
+store.dispatch(navigate(location.pathname));
+
+document.addEventListener('click', event => {
+  if (event.path[0] instanceof HTMLAnchorElement) {
+    event.preventDefault();
+    store.dispatch(navigate(event.path[0].getAttribute('href')));
   }
-}
-
-customElements.define('ffxiv-toolkit', App);
+});
