@@ -12,7 +12,7 @@ const resolvePath = (sourcePath) => {
     try {
       const packageJson = require(`${packageName}/package.json`);
 
-      return `/node_modules/${packageName}/${pathWithExtension || packageJson.module || packageJson.main}`;
+      return `/node_modules/${packageName}/${pathWithExtension || packageJson.module || packageJson.main || 'index.js'}`;
     } catch (_) {
       console.warn(
         `Unable to read package: ${packageName}.`,

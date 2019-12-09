@@ -1,3 +1,4 @@
+import 'autotrack/lib/plugins/url-change-tracker';
 import { html, css, LitElement } from 'lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import routes, { defaultRoute } from '../routes';

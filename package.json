@@ -37,6 +37,7 @@
     "@babel/core": "^7.7.4",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
+    "autotrack": "^2.4.1",
     "babel-plugin-module-resolver": "^3.2.0",
     "express": "^4.17.1",
     "lit-element": "^2.2.1",
